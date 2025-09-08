@@ -1,0 +1,16 @@
+:host{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-container{
+  padding: 16px;
+  background-color: var(--mat-sys-surface);
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    border-radius: 12px;
+  box-shadow: var(--mat-sys-surface-container-highest) 0px 2px 8px 0px;
+}

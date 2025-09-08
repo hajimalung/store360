@@ -1,0 +1,18 @@
+<header>
+  <mat-toolbar class="app-toolbar">
+    @if(drawerService.isOpen()){
+      <button mat-icon-button (click)="drawerService.close()">
+        <mat-icon>menu_open</mat-icon>
+      </button>
+    }@else{
+      <button mat-icon-button (click)="drawerService.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    }
+    {{ appContext.APP_NAME() }}
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon [matBadge]="noOfNotifications()">notifications</mat-icon>
+    </button>
+  </mat-toolbar>
+</header>
