@@ -15,6 +15,7 @@ html {
     typography: Roboto,
     density: 0,
   ));
+  --app-box-shadow: var(--mat-sys-surface-container-highest) 0px 2px 8px 0px;
 }
 
 body {

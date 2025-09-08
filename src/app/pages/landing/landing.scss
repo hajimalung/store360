@@ -5,12 +5,12 @@
 }
 .main-container{
   padding: 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  border-radius: 12px;
   background-color: var(--mat-sys-surface);
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    border-radius: 12px;
-  box-shadow: var(--mat-sys-surface-container-highest) 0px 2px 8px 0px;
+  box-shadow: var(--app-box-shadow);
 }

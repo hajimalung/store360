@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Landing } from "./pages/landing/landing";
+import { Login } from "./pages/login/login";
+import { Landing } from './pages/landing/landing';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Landing],
+  imports: [Login, Landing],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
