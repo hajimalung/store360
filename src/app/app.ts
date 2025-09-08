@@ -1,11 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { Header } from "./components/header/header";
-import { Body } from "./components/body/body";
+import { Landing } from "./pages/landing/landing";
 
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Body],
+  imports: [Landing],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

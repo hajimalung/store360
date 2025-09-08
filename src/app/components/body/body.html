@@ -1,5 +1,7 @@
 <mat-drawer-container class="drawer-container">
-  <mat-drawer mode="side" [opened]="drawerService.isOpen()" >Drawer content</mat-drawer>
+  <mat-drawer mode="side" [opened]="drawerService.isOpen()" >
+    <app-nav-list />
+  </mat-drawer>
   <mat-drawer-content>
     <ng-content>
     </ng-content>
