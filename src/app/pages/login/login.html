@@ -23,7 +23,13 @@
     }
   </mat-form-field>
 
-  <button matButton="filled" class="example-full-width">Sign in</button>
-  <button matButton class="example-full-width">Create Account</button>
+  <button
+  matButton="filled"
+  class="example-full-width sign-in"
+  (click)="onSignInClick()">
+    Sign in
+    <!-- <mat-spinner diameter="20"></mat-spinner>  -->
+  </button>
+  <button matButton disabled class="example-full-width">Create Account</button>
 
 </form>
