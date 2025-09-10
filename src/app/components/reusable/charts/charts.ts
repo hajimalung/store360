@@ -1,17 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, input, inject, computed } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbar } from "@angular/material/toolbar";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { ChartSettings } from "../chart-settings/chart-settings";
+import { ChartSettingsService } from '../../../services/chart-settings';
 
 @Component({
   selector: 'app-charts',
-  imports: [NgxChartsModule],
+  imports: [NgxChartsModule, MatButtonModule, MatIconModule, MatToolbar, MatSidenavModule, ChartSettings],
   templateUrl: './charts.html',
   styleUrl: './charts.scss'
 })
 export class Charts {
+
+  chartSettingsService = inject(ChartSettingsService);
+
   view:[number, number] = [600, 400];
-  colorScheme = {
-    domain: ['#9370DB', '#87CEFA', '#FA8072', '#FF7F50', '#90EE90', '#9370DB']
-  };
 
   public single = [
   {
@@ -40,13 +46,12 @@ export class Charts {
   }
 ];
 
-gradient = true;
- showXAxis = true;
-  showYAxis = true;
-  showLegend = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Country';
-  showYAxisLabel = true;
-  yAxisLabel = 'Sales';
-
+  gradient = computed(()=>this.chartSettingsService.gradient());
+  showXAxis = computed(()=>this.chartSettingsService.showXAxis());
+  showYAxis = computed(()=>this.chartSettingsService.showYAxis());
+  showLegend = computed(()=>this.chartSettingsService.showLegend());
+  showXAxisLabel = computed(()=>this.chartSettingsService.showXAxisLabel());
+  showYAxisLabel =  computed(()=>this.chartSettingsService.showYAxisLabel());
+  yAxisLabel = input('Sales');
+  xAxisLabel = input('Country');
 }

@@ -1,0 +1,9 @@
+<div class="container">
+  <h4>Chart Settings</h4>
+  <mat-slide-toggle #gradient (toggleChange)="chartSettingsService.gradient.set(gradient.checked)"> Color Solids</mat-slide-toggle>
+  <mat-slide-toggle #showXAxis (toggleChange)="chartSettingsService.showXAxis.set(showXAxis.checked)"> Hide X axis</mat-slide-toggle>
+  <mat-slide-toggle #showYAxis (toggleChange)="chartSettingsService.showYAxis.set(showYAxis.checked)"> Hide Y axis</mat-slide-toggle>
+  <mat-slide-toggle #showLegends (toggleChange)="chartSettingsService.showLegend.set(showLegends.checked)"> Hide legends</mat-slide-toggle>
+  <mat-slide-toggle #showXAxisLabel (toggleChange)="chartSettingsService.showXAxisLabel.set(showXAxisLabel.checked)"> Hide X axis label</mat-slide-toggle>
+  <mat-slide-toggle #showYAxisLabel (toggleChange)="chartSettingsService.showYAxisLabel.set(showYAxisLabel.checked)"> Hide Y axis label</mat-slide-toggle>
+</div>
