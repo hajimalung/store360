@@ -21,28 +21,32 @@ export class Charts {
 
   public single = [
   {
-    "name": "China",
+    "name": "Monday",
     "value": 2243772
   },
   {
-    "name": "USA",
+    "name": "Tuesday",
     "value": 1126000
   },
   {
-    "name": "Norway",
+    "name": "Wednesday",
     "value": 296215
   },
   {
-    "name": "Japan",
+    "name": "Thursday",
     "value": 257363
   },
   {
-    "name": "Germany",
+    "name": "Friday",
     "value": 196750
   },
   {
-    "name": "France",
+    "name": "Saturday",
     "value": 204617
+  },
+  {
+    "name": "Sunday",
+    "value": 1214300
   }
 ];
 
@@ -53,5 +57,5 @@ export class Charts {
   showXAxisLabel = computed(()=>this.chartSettingsService.showXAxisLabel());
   showYAxisLabel =  computed(()=>this.chartSettingsService.showYAxisLabel());
   yAxisLabel = input('Sales');
-  xAxisLabel = input('Country');
+  xAxisLabel = input('Day');
 }

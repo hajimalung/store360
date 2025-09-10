@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:host {
+  @include mat.sidenav-overrides((
+      content-background-color: var(--mat-sys-surface)
+  ));
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-outline),
+    container-text-color: red,
+  ));
+}
+
+.container{
+  border: 1px solid var(--mat-sys-outline-variant);
+  box-shadow: var(--app-box-shadow);
+}

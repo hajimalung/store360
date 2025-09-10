@@ -1,5 +1,12 @@
-<mat-drawer-container>
+<div class="container">
+  <mat-drawer-container [hasBackdrop]="false">
   <mat-drawer #drawer position="end" mode="over">
+    <mat-toolbar>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
     <app-chart-settings />
   </mat-drawer>
   <mat-drawer-content>
@@ -23,3 +30,4 @@
       </ngx-charts-bar-vertical>
   </mat-drawer-content>
 </mat-drawer-container>
+</div>
