@@ -1,6 +1,18 @@
 <app-header />
 <app-body>
   <div class="main-container">
-    Content to load
+    <!-- <app-dashboard /> -->
+     <ngx-charts-bar-vertical
+              [view]="view"
+              [results]="single"
+              [gradient]="gradient"
+              [xAxis]="showXAxis"
+              [yAxis]="showYAxis"
+              [legend]="showLegend"
+              [showXAxisLabel]="showXAxisLabel"
+              [showYAxisLabel]="showYAxisLabel"
+              [xAxisLabel]="xAxisLabel"
+              [yAxisLabel]="yAxisLabel">
+</ngx-charts-bar-vertical>
   </div>
 </app-body>
