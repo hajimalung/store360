@@ -5,9 +5,15 @@
   @include mat.sidenav-overrides((
       content-background-color: var(--mat-sys-surface)
   ));
-  @include mat.toolbar-overrides((
+}
+
+.drawer-toolbar{
+    @include mat.toolbar-overrides((
     container-background-color: var(--mat-sys-outline),
-    container-text-color: red,
+  ));
+   @include mat.icon-button-overrides((
+    icon-color: var(--mat-sys-on-primary),
+    state-layer-color:  var(--mat-sys-on-primary),
   ));
 }
 

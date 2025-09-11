@@ -1,0 +1,82 @@
+.server-error-container {
+      display: grid;
+      place-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      min-block-size: 100vh;
+    }
+
+    .error-illustration {
+      width: min(100%, 600px);
+      height: auto;
+    }
+
+    .server-rack {
+      fill: var(--mat-sys-surface-container);
+      stroke: var(--mat-sys-outline);
+      stroke-width: 2;
+    }
+
+    .server-unit {
+      fill: var(--mat-sys-surface-container-high);
+      stroke: var(--mat-sys-outline-variant);
+    }
+
+    .server-light {
+      fill: var(--mat-sys-error);
+    }
+
+    .server-light.blink {
+      animation: blink 2s infinite;
+    }
+
+    .error-symbols {
+      fill: var(--mat-sys-error);
+    }
+
+    .error-symbol {
+      font-size: 48px;
+      font-weight: bold;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .error-code {
+      font-size: 64px;
+      font-weight: bold;
+      fill: var(--mat-sys-primary);
+    }
+
+    .lightning {
+      stroke: var(--mat-sys-error);
+      stroke-width: 3;
+      stroke-linecap: round;
+      fill: none;
+      animation: flash 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: var(--mat-sys-on-surface);
+    }
+
+    p {
+      color: var(--mat-sys-on-surface-variant);
+      margin-bottom: 1rem;
+    }
