@@ -11,18 +11,6 @@ export const routes: Routes = [
         path: 'dashboard',
         loadComponent: () => import('./components/dashboard/dashboard').then(m => m.Dashboard)
       },
-      // {
-      //   path: 'inventory',
-      //   loadComponent: () => import('./pages/inventory/inventory').then(m => m.Inventory)
-      // },
-      // {
-      //   path: 'orders',
-      //   loadComponent: () => import('./pages/orders/orders').then(m => m.Orders)
-      // },
-      // {
-      //   path: 'customers',
-      //   loadComponent: () => import('./pages/customers/customers').then(m => m.Customers)
-      // },
       {
         path: '',
         redirectTo: 'dashboard',
@@ -36,6 +24,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    loadComponent: () => import('./pages/not-found/not-found').then(m => m.NotFound)
+    loadComponent: () => import('./pages/error-pages/not-found/not-found').then(m => m.NotFound)
   }
 ];
