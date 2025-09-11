@@ -5,7 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/http/auth';
-import { LoginCredentials } from '../../modals/auth';
+import { LoginCredentials, LoginResponse } from '../../modals/auth';
+import { TokenService } from '../../services/http/token';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class Login {
   passwordFormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
   private readonly authService = inject(AuthService);
+  private readonly tokenService = inject(TokenService);
 
   onSignInClick(){
     if(this.emailFormControl.invalid || this.passwordFormControl.invalid){
@@ -30,7 +32,8 @@ export class Login {
       password: this.passwordFormControl.value!
     }
     this.authService.login(credentials).subscribe({
-      next: (response) => {
+      next: (response:LoginResponse) => {
+        this.tokenService.setToken(response.token?response.token:"NULL");
         console.log('Login successful', response);
       },
       error: (error) => {
