@@ -14,5 +14,8 @@
     <button mat-icon-button>
       <mat-icon [matBadge]="noOfNotifications()">notifications</mat-icon>
     </button>
+    <button mat-icon-button (click)="logoutClicked()">
+      <mat-icon>logout</mat-icon>
+    </button>
   </mat-toolbar>
 </header>

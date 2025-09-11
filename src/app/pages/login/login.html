@@ -22,7 +22,9 @@
       <mat-error>Password is <strong>required</strong></mat-error>
     }
   </mat-form-field>
-
+    @if (loginError()) {
+      <mat-error>Login <strong>Failed!</strong></mat-error>
+    }
   <button
   matButton="filled"
   class="example-full-width sign-in"

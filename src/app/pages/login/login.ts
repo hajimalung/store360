@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -7,6 +7,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AuthService } from '../../services/http/auth';
 import { LoginCredentials, LoginResponse } from '../../modals/auth';
 import { TokenService } from '../../services/http/token';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,8 +21,12 @@ export class Login {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
+  private router = inject(Router);
+
   private readonly authService = inject(AuthService);
   private readonly tokenService = inject(TokenService);
+
+  loginError = signal(false);
 
   onSignInClick(){
     if(this.emailFormControl.invalid || this.passwordFormControl.invalid){
@@ -34,10 +39,11 @@ export class Login {
     this.authService.login(credentials).subscribe({
       next: (response:LoginResponse) => {
         this.tokenService.setToken(response.token?response.token:"NULL");
-        console.log('Login successful', response);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.error('Login failed', error);
+        this.loginError.set(true);
       }
     });
   }

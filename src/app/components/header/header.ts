@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppContext } from '../../services/context';
 import { DrawerService } from '../../services/drawer';
 import { NotificationsService } from '../../services/notifications';
+import { AuthService } from '../../services/http/auth';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,13 @@ import { NotificationsService } from '../../services/notifications';
 export class Header {
     appContext = inject(AppContext);
     drawerService = inject(DrawerService);
-    notificationsService = inject(NotificationsService);
+
+    private notificationsService = inject(NotificationsService);
+    private authService = inject(AuthService);
 
     noOfNotifications = computed(()=> this.notificationsService.notifications().length);
+
+    logoutClicked(){
+      this.authService.logout();
+    }
 }
